@@ -1,24 +1,41 @@
 var schaal;
 
 function setup() {
-  canvas = createCanvas(1000,300);
-  canvas.parent('processing');
-  noStroke();
+    canvas = createCanvas(1000,300);
+    canvas.parent('processing');
+    noStroke();
 }
 
 function draw() {
-  background('cornflowerblue');
-  schaal = 1 + mouseY / height;
+    background('cornflowerblue');
+    schaal = 1 + mouseY / height;
 
-  // teken de grond
-  fill('wheat');
-  rect(0,250,width,height - 250);  
+    tekenZon(mouseX,schaal);
 
-  tekenHuis();
+    // teken de grond
+    fill('wheat');
+    rect(0,250,width,height - 250);  
 
-  tekenBoom(700);
-  tekenBoom(900);
+    
+
+    tekenBoom(50);
+    tekenBoom(150);
+    tekenBoom(250);
+
+    tekenHuis();
+
+
+    tekenBoom(700);
+    tekenBoom(900);
 }
+
+function tekenZon(x,s) {
+    push()
+    fill('red');
+    scale(s);
+    ellipse(x,200,300,300);
+    pop();
+ }
 
 function tekenHuis() {
   push();

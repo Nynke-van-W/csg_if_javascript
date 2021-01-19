@@ -8,18 +8,22 @@ function setup() {
   frameRate(15);
   colorMode(RGB,255,255,255,1);
   background(0,0,75,1);
+  noStroke();
 }
 
 function draw() {
-  background(0,0,75,1);
-  tekenSter(xPositie,yPositie);
+  background(0,0,75,0.1);
+  tekenSter(xPositie,yPositie,schaal);
+  xPositie+=5;
+  yPositie++;
+  schaal+= 0.25;
 }
 
-function tekenSter(x,y) {
+function tekenSter(x,y,s) {
   push();
-  scale(1);
-  strokeWeight(2);
-  stroke('white');
+  scale(s);
+//   strokeWeight(0);
+//   stroke('white');
   fill('khaki');
   translate(x,y);
   triangle(0,0,80,0,40,65);

@@ -26,13 +26,18 @@ function tekenRaster() {
   push();
   noFill();
   stroke('grey');
+
+  for (i=0; i <= aantalKolommenRaster; i++1) {
+      rect(0,,celGrootte,celGrootte);
+      translate(celGrootte)
+  }
   /*
   Maak hieronder een dubbele herhaling om een raster te maken.
   HINT: je kunt terugkijken naar het raster dat je in H1 hebt gemaakt.
   Maak gebruik van de variabelen die bovenaan zijn gedeclareerd.
   */
   
-      rect(4*celGrootte,2*celGrootte,celGrootte,celGrootte);
+    //   rect(4*celGrootte,2*celGrootte,celGrootte,celGrootte);
 
   pop();
 }

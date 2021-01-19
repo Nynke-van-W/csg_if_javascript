@@ -27,10 +27,11 @@ function draw() {
   yPositie += ySnelheid;
   fill(255,255,255,1);
   ellipse(xPositie,yPositie,2*straal);  
+  xPositie = constrain(xPositie,0,width - straal);
   
   // Pas onderstaande regel aan: gebruik de functie dist om de onderlinge afstand te bepalen
   
-  onderlingeAfstand = 1;
+  onderlingeAfstand = dist(550,height - straal, xPositie, yPositie);
   if (onderlingeAfstand <= 0) {
     eindScherm();
     noLoop();
@@ -39,7 +40,7 @@ function draw() {
   // door de slashes weg te halen kun je besturing van de bal inschakelen.
   // Om het wat moeilijker te maken veranderen er bij gebruik van een pijltoets 2 dingen tegelijkertijd.
   
-  // gebruikBesturing();
+   gebruikBesturing();
 
   if (yPositie<straal || yPositie>height-straal) {
     ySnelheid *= -1;
