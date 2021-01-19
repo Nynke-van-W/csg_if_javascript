@@ -3,8 +3,8 @@ var aantalKolommenRaster = 9;
 var celGrootte;
 
 var spriteJos;
-var xJos;
-var yJos;
+var xJos = 400;
+var yJos = 300;
 
 function preload() {
   brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
@@ -18,19 +18,22 @@ function setup() {
 }
 
 function draw() {
-  
+  background(brug);
   tekenRaster();
+  image(spriteJos,xJos,yJos);
 }
 
 function tekenRaster() {
   push();
   noFill();
   stroke('grey');
-
-  for (i=0; i <= aantalKolommenRaster; i++1) {
-      rect(0,,celGrootte,celGrootte);
-      translate(celGrootte)
+  
+  for (var rij=0; rij<= aantalRijenRaster; rij++){
+      for (var kolom=0; kolom <= aantalKolommenRaster; kolom++) {
+      rect(kolom*celGrootte,rij*celGrootte,celGrootte,celGrootte);
+    }
   }
+  
   /*
   Maak hieronder een dubbele herhaling om een raster te maken.
   HINT: je kunt terugkijken naar het raster dat je in H1 hebt gemaakt.
