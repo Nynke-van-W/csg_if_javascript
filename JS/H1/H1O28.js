@@ -22,7 +22,7 @@ function draw() {
   // tekenen rode bladeren
  
 }
-  // gele vulkleur
+  /// gele vulkleur
 
   fill(255, 195, 0,0.5);
     for (var n = 0; n < aantal;n++) {
